@@ -2,49 +2,41 @@
 
 ## Project Description
 
-The Electricity Bill Estimator is a Python-based graphical user interface (GUI) application that calculates electricity consumption and estimated billing. The system allows users to compute electricity costs using either manual input or appliance-based energy tracking with persistent storage[cite: 1, 4].
+The **Electricity Bill Estimator** is a Python-based graphical user interface (GUI) application designed to compute electricity consumption and estimate billing costs. It allows users to calculate costs via manual input or track energy usage per appliance with persistent storage[cite: 1, 4].
 
-It simulates real-world electricity usage by allowing users to manage multiple appliances and compute total energy consumption in kilowatt-hours (kWh) through a user-friendly GUI[cite: 1].
-
----
-
-## Features
-
-### Manual Calculation
-- Allows users to input total electricity consumption in kWh[cite: 1].
-- Computes total bill using a given rate per kWh[cite: 1].
-
-### Appliance Management System (CRUD)
-- **Add Appliance:** Input details (name, power in watts, hours per day, days used)[cite: 1].
-- **View Appliances:** Display all registered appliances along with their computed kWh consumption[cite: 1].
-- **Update Appliance:** Modify existing appliance details[cite: 1].
-- **Delete Appliance:** Remove appliance records from the system[cite: 1].
-
-### Automatic Energy Computation & Persistence
-- Calculates electricity usage automatically based on appliance data[cite: 1].
-- **File Data Persistence:** Saves and loads appliance records from `appliances.txt` using `file_handler.py`[cite: 4].
-
-### Graphical User Interface (GUI)
-- Clean Tkinter interface (`gui.py`) for forms, interactive tables, and clear visual outputs[cite: 4].
+The system provides an intuitive interface for managing appliances, calculating total energy consumption in kilowatt-hours (kWh), and viewing overall costs[cite: 1].
 
 ---
 
-## File Structure & Architecture
+## Key Features
+
+* **Manual Calculation:** Instantly calculates the total bill using manual kWh consumption input and a custom rate per kWh[cite: 1].
+* **Appliance Management (CRUD):**
+  * **Add:** Register new appliances with power rating (Watts), daily usage hours, and days used[cite: 1].
+  * **View:** Display all saved appliances and their computed kWh consumption[cite: 1].
+  * **Update:** Edit existing appliance details[cite: 1].
+  * **Delete:** Remove unwanted appliance records[cite: 1].
+* **Data Persistence:** Automatically saves and loads appliance data using `appliances.txt` so records persist across sessions[cite: 4].
+* **Graphical User Interface:** User-friendly GUI layout with input forms, interactive tables, and action buttons[cite: 1, 4].
+
+---
+
+## File Architecture
 
 ```text
 electricity-bill-estimator-gui/
-│
-├── main.py                 # Entry point to launch the application
-├── gui.py                  # Graphical User Interface layout and event handling
-├── appliance_manager.py    # CRUD logic for managing appliance objects
-├── calculation.py          # Math logic for kWh and bill computations
-├── file_handler.py         # File I/O operations for saving/loading data
-└── appliances.txt          # Plain text storage file for appliance records
+├── main.py                 # Application entry point
+├── gui.py                  # Tkinter GUI layout and user interactions
+├── appliance_manager.py    # Core CRUD logic for managing appliances
+├── calculation.py          # Math formulas for kWh and bill computations
+├── file_handler.py         # File I/O operations (reads/writes appliances.txt)
+├── appliances.txt          # Data storage file
+└── practice concept.py     # Sandbox / testing script
 ```[cite: 4]
 
 ---
 
-## Formula Used
+## Formulas Used
 
 ### Appliance-Based Estimation
 ```text
